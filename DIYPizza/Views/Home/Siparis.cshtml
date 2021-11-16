@@ -1,0 +1,26 @@
+﻿@model Siparis
+@{ 
+    ViewData["Title"] = "Siparişiniz Alındı";
+}
+
+<h1>Siparişiniz İçin Teşekkürler!</h1>
+
+<p>Belirtmiş olduğunuz malzemelerle @Model.Id nolu siparişiniz oluşturulmuştur. Pizzanız hazır olduğunda adresinize gönderilecektir.</p>
+
+<h4>Seçilen Malzemeler</h4>
+<ul>
+    @foreach (Malzeme m in Model.Malzemeler)
+    {
+        <li>@m.Ad</li>
+    }
+</ul>
+
+<h4>Gönderim Adresi</h4>
+<p>
+    @Model.Adres
+</p>
+
+<h4>Sipariş Oluşturulma Zamanı</h4>
+<p>
+    @Model.Zaman
+</p>
